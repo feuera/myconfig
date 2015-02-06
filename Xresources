@@ -1,0 +1,46 @@
+
+URxvt.font: xft:Bitstream Vera Sans Mono:pixelsize=17
+URxvt.boldFont: xft:Bitstream Vera Sans Mono:pixelsize=16:style=bold
+URxvt.scrollBar: false
+URxvt.urlLauncher: firefox
+URxvt.tabbed.font: xft:Bitstream Vera Sans Mono:pixelsize=14
+URxvt.perl-ext-common: tabbed
+!URxvt.perl-ext-common: tabbed,font-size
+
+URxvt.tabbed.tabbar-fg: 2
+URxvt.tabbed.tabbar-bg: 0
+URxvt.tabbed.tab-fg: 3
+URxvt.tabbed.tab-bg: 0
+
+
+!URxvt.keysym.C-Up:     perl:font-size:increase
+!URxvt.keysym.C-Down:   perl:font-size:decrease
+!URxvt.keysym.C-S-Up:   perl:font-size:incglobal
+!URxvt.keysym.C-S-Down: perl:font-size:decglobal
+
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+
+URxvt.saveLines: 8192
+
+!urxvt*foreground: white
+!urxvt*background: black
+
+
+*color0:  #2E3436
+*color1:  #a40000
+*color2:  #4E9A06
+*color3:  #C4A000
+*color4:  #3465A4
+*color5:  #75507B
+*color6:  #ce5c00
+*color7:  #babdb9
+*color8:  #555753
+*color9:  #EF2929
+*color10: #8AE234
+*color11: #FCE94F
+*color12: #729FCF
+*color13: #AD7FA8
+*color14: #fcaf3e
+*color15: #EEEEEC
+
