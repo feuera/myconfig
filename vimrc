@@ -14,9 +14,16 @@ Bundle 'jpalardy/vim-slime'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'vim-scripts/a.vim'
 Bundle 'bling/vim-airline'
+"Bundle 'wincent/command-t'
+Bundle 'kien/ctrlp.vim'
+Bundle 'SirVer/ultisnips'
+Bundle 'honza/vim-snippets'
+Bundle 'ervandew/supertab'
+"Bundle ''
+"Bundle 'mihaifm/bufstop'
 
 
-call vundle#end()  
+call vundle#end()
 filetype plugin indent on
 
 
@@ -59,16 +66,27 @@ nmap <leader>h :bprevious<CR>
 nmap <leader>bq :bp <BAR> bd #<CR>
 
 nnoremap <leader>jd :YcmCompleter GoTo<CR>
+"nnoremap <leader>jk :YcmCompleter GoToDeclaration<CR>
+"nnoremap <leader>jf :YcmCompleter GoToDefinition<CR>
 
 "YCM STUFF
 let g:ycm_autoclose_preview_window_after_insertion = 1
 "let g:ycm_server_log_level = 'debug'
 "let g:ycm_server_keep_logfiles = 1
 
+" use supertab to resolve conflicting ultisnip/youcompleteme
+" http://0x3f.org/blog/make-youcompleteme-ultisnips-compatible/
+let g:ycm_key_list_select_completion = ['<C-TAB>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-S-TAB>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<C-Tab>'
+
+
+
 syntax on
 set rnu
 set mouse=a
 set incsearch
+set showmatch
 set hlsearch
 hi Search cterm=NONE ctermfg=black ctermbg=yellow
 
@@ -77,4 +95,16 @@ set shiftwidth=4
 set softtabstop=4
 set cindent
 set autoindent
+
+:map <leader>b :ls<CR>:b
+
+" Shortcut to rapidly toggle `set list`
+nmap <leader>l :set list!<CR>
+" Use the same symbols as TextMate for tabstops and EOLs
+set listchars=tab:?\ ,eol:?
+
+nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
+inoremap jj <ESC>
+
+set tm=500
 
