@@ -13,12 +13,16 @@ Bundle 'christoomey/vim-tmux-navigator'
 Bundle 'jpalardy/vim-slime'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'vim-scripts/a.vim'
+Bundle 'bling/vim-bufferline'
 Bundle 'bling/vim-airline'
 "Bundle 'wincent/command-t'
 Bundle 'kien/ctrlp.vim'
 Bundle 'SirVer/ultisnips'
 Bundle 'honza/vim-snippets'
 Bundle 'ervandew/supertab'
+Bundle 'tpope/vim-fugitive'
+Bundle 'ludovicchabant/vim-lawrencium'
+Bundle 'tpope/vim-surround'
 "Bundle ''
 "Bundle 'mihaifm/bufstop'
 
@@ -26,30 +30,40 @@ Bundle 'ervandew/supertab'
 call vundle#end()
 filetype plugin indent on
 
-
 let mapleader = ','
 
 nnoremap ; :
 nnoremap <leader>w <C-W>v
 nnoremap <leader><space> :noh<cr>
-"color ir_black
-"color molokai
-"color peaksea
-"solarized_termcolors=16
-"color solarized
-
-"nnoremap <C-j> TmuxNavigateDown
-
-"let g:airline#extensions#tabline#enabled = 1
-"let g:airline#extensions#tabline#left_sep = ' '
-"let g:airline#extensions#tabline#left_alt_sep = '|'
-
 
 " Enable the list of buffers
 let g:airline#extensions#tabline#enabled = 1
-
 " Show just the filename
 let g:airline#extensions#tabline#fnamemod = ':t'
+"let g:airline_powerline_fonts=1
+
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
+" unicode symbols
+let g:airline_left_sep = '»'
+let g:airline_left_sep = '▶'
+let g:airline_right_sep = '«'
+let g:airline_right_sep = '◀'
+
+
+let g:airline#extensions#branch#enabled = 1
+let g:airline#extensions#virtualenv#enabled = 1
+let g:airline#extensions#tabline#buffer_idx_mode = 1
+nmap <leader>1 <Plug>AirlineSelectTab1
+nmap <leader>2 <Plug>AirlineSelectTab2
+nmap <leader>3 <Plug>AirlineSelectTab3
+nmap <leader>4 <Plug>AirlineSelectTab4
+nmap <leader>5 <Plug>AirlineSelectTab5
+nmap <leader>6 <Plug>AirlineSelectTab6
+nmap <leader>7 <Plug>AirlineSelectTab7
+nmap <leader>8 <Plug>AirlineSelectTab8
+nmap <leader>9 <Plug>AirlineSelectTab9
 
 
 let g:slime_target = "tmux"
@@ -88,6 +102,7 @@ set mouse=a
 set incsearch
 set showmatch
 set hlsearch
+set ignorecase
 hi Search cterm=NONE ctermfg=black ctermbg=yellow
 
 set expandtab
@@ -101,10 +116,15 @@ set autoindent
 " Shortcut to rapidly toggle `set list`
 nmap <leader>l :set list!<CR>
 " Use the same symbols as TextMate for tabstops and EOLs
-set listchars=tab:?\ ,eol:?
+"set listchars=tab:?\ ,eol:?
+set listchars=tab:▸\ ,eol:¬
+"Invisible character colors
+"highlight NonText guifg=#4a4a59
+"highlight SpecialKey guifg=#4a4a59
 
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 inoremap jj <ESC>
 
 set tm=500
-
+set t_Co=256
+set laststatus=2
