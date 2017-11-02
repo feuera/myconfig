@@ -9,19 +9,22 @@ URxvt.tabbed.font: xft:Bitstream Vera Sans Mono:pixelsize=14
 !URxvt.font: -*-terminus-*-*-*-*-17-*-*-*-*-*-iso10646-*
 
 !xterm*faceName:           Terminus:style=Regular:size=10
-xterm*font:              -*-dina-medium-r-*-*-16-*-*-*-*-*-*-*
+xterm*faceName: Bitstream Vera Sans Mono:pixelsize=17
+!xterm*boldFont: xft:Bitstream Vera Sans Mono:pixelsize=16:style=bold
+XTerm*colorBDMode: false
+XTerm*locale: true
+!xterm*font:              -*-dina-medium-r-*-*-16-*-*-*-*-*-*-*
 !xterm*faceName:           Terminus:style=Regular:size=13
 !XTerm*font: -*-terminus-medium-*-*-*-18-*-*-*-*-*-iso10646-*
 
 URxvt.scrollBar: false
 URxvt.urlLauncher: firefox
-URxvt.perl-ext-common: tabbed
+URxvt.perl-ext-common: tabbed, selection-to-clipboard
 !URxvt.perl-ext-common: tabbed,font-size
 URxvt.tabbed.tabbar-fg: 2
 URxvt.tabbed.tabbar-bg: 0
 URxvt.tabbed.tab-fg: 3
 URxvt.tabbed.tab-bg: 0
-
 
 !URxvt.keysym.C-Up:     perl:font-size:increase
 !URxvt.keysym.C-Down:   perl:font-size:decrease
@@ -35,7 +38,7 @@ URxvt.saveLines: 8192
 
 !urxvt*foreground: white
 !urxvt*background: black
-XTerm*utf8: 1
+!XTerm*utf8: 1
 
 
 *color0:  #2E3436
