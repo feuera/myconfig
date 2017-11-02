@@ -20,13 +20,18 @@ Bundle 'bling/vim-airline'
 "Bundle 'honza/vim-snippets'
 Bundle 'ervandew/supertab'
 Bundle 'tpope/vim-fugitive'
+"vim mercurial wrapper
 Bundle 'ludovicchabant/vim-lawrencium'
 Bundle 'tpope/vim-surround'
 Bundle 'klen/python-mode'
-Bundle 'digitaltoad/vim-jade'
+Bundle 'digitaltoad/vim-pug'
 Bundle 'sirtaj/vim-openscad'
 Bundle 'ivanov/vim-ipython'
 Bundle 'severin-lemaignan/vim-minimap'
+Bundle 'shemerey/vim-peepopen'
+Bundle 'kana/vim-textobj-user'
+Bundle 'bps/vim-textobj-python'
+
 
 "Bundle ''
 "Bundle 'mihaifm/bufstop'
@@ -103,7 +108,12 @@ nmap <leader>bq :bp <BAR> bd #<CR>
 
 
 let g:pymode_folding = 0
-let g:pymode_rope = 0
+"let g:pymode_rope = 0
+let g:pymode_python = 'python3'
+let ropevim_vim_completion=1
+let ropevim_extended_complete=1
+
+
 
 syntax on
 set rnu
@@ -212,4 +222,17 @@ let OmniCpp_MayCompleteArrow = 1
 let OmniCpp_MayCompleteScope = 0
 " don't select first item in pop-up menu
 let OmniCpp_SelectFirstItem = 0
+
+
+" disable macro, since not used in 90+% use cases
+"map q <Nop>
+"nnoremap q :if winnr('$') > 1 \|hide\|else\|silent! exec 'q'\|endif<CR>
+" qo, close all other window    -- 'o' stands for 'only'
+"nnoremap qo :only<CR>
+" qu close upper window
+"nnoremap qu :-q<CR>
+
+" vim ipython mode: send whole paragraph to ipyton console
+nmap <leader>s vap<C-s>
+nmap <leader>f vaf<C-s>
 
